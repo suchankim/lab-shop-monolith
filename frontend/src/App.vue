@@ -30,6 +30,7 @@
                     style="margin-left:10px; font-size:20px; cursor:pointer;"
                     ></span> 
                 <v-spacer></v-spacer>
+
             </v-app-bar>
 
             <v-navigation-drawer app clipped flat v-model="sideBar">
@@ -87,18 +88,24 @@
                             </v-list-item>
 
                             <v-card-actions>
-                                <v-btn 
-                                    class="mx-auto"
-                                    outlined
-                                    rounded
-                                    key="orders"
-                                    to="/orders"
-                                    @click="changeUrl()"
-                                    color="deep-purple lighten-2"
-                                    style="font-weight:500; font-size:20px; padding:15px; border:solid 2px;"
-                                >
-                                    Order
-                                </v-btn>
+                                <v-tooltip bottom>
+                                    <template v-slot:activator="{ on }">
+                                        <v-btn 
+                                            v-on="on"
+                                            class="mx-auto"
+                                            outlined
+                                            rounded
+                                            key="orders"
+                                            to="/orders"
+                                            @click="changeUrl()"
+                                            color="deep-purple lighten-2"
+                                            style="font-weight:500; font-size:20px; padding:15px; border:solid 2px; max-width:250px; overflow:hidden"
+                                        >
+                                            Order
+                                        </v-btn>
+                                    </template>
+                                    <span>Order</span>
+                                </v-tooltip>
                             </v-card-actions>
                         </v-card>
                         <v-card
@@ -116,18 +123,24 @@
                             </v-list-item>
 
                             <v-card-actions>
-                                <v-btn 
-                                    class="mx-auto"
-                                    outlined
-                                    rounded
-                                    key="inventories"
-                                    to="/inventories"
-                                    @click="changeUrl()"
-                                    color="deep-purple lighten-2"
-                                    style="font-weight:500; font-size:20px; padding:15px; border:solid 2px;"
-                                >
-                                    Inventory
-                                </v-btn>
+                                <v-tooltip bottom>
+                                    <template v-slot:activator="{ on }">
+                                        <v-btn 
+                                            v-on="on"
+                                            class="mx-auto"
+                                            outlined
+                                            rounded
+                                            key="inventories"
+                                            to="/inventories"
+                                            @click="changeUrl()"
+                                            color="deep-purple lighten-2"
+                                            style="font-weight:500; font-size:20px; padding:15px; border:solid 2px; max-width:250px; overflow:hidden"
+                                        >
+                                            Inventory
+                                        </v-btn>
+                                    </template>
+                                    <span>Inventory</span>
+                                </v-tooltip>
                             </v-card-actions>
                         </v-card>
 
@@ -153,6 +166,7 @@ export default {
     async created() {
       var path = document.location.href.split("#/")
       this.urlPath = path[1];
+
     },
 
     mounted() {
@@ -170,7 +184,7 @@ export default {
         },
         goHome() {
             this.urlPath = null;
-        }
+        },
     }
 };
 </script>
