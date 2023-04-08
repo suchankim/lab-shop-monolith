@@ -1,7 +1,7 @@
 # 
 
 ## Model
-www.msaez.io/#/courses/fea33dd0-8030-11ed-9757-3db21672e322/1f2deec0-c856-11ed-aa53-950d34db487f/monolith-2-misvc-2022-associate
+www.msaez.io/#/storming/labshopmonolith-1
 
 ## Before Running Services
 ### Make sure there is a Kafka server running
